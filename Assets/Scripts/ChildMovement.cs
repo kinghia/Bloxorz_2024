@@ -6,24 +6,27 @@ public class ChildMovement : MonoBehaviour
 {
     [SerializeField] GameObject childMove1;
     [SerializeField] GameObject childMove2;
+    [SerializeField] GameObject boxChild;
     public Movement movementScript;
     
     public MonoBehaviour  scriptA;
     public MonoBehaviour  scriptB;
     public Vector3 savedPositionA;
     public Vector3 savedPositionB;
+    GameObject newChildMove1;
+    GameObject newChildMove2;
+    public GameObject newBoxChild;
 
 
     void Start()
     {
-        SaveBlockPositions();
-        childMove1.SetActive(false);
-        childMove2.SetActive(false);
+        //SaveBlockPositions();
+        
     }
 
     void Update()
     {
-         if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (movementScript == null || !movementScript.isRotating)
             {
@@ -36,36 +39,21 @@ public class ChildMovement : MonoBehaviour
     }
     public void ToggleScripts()
     {
-        bool moveCurrent = childMove1.GetComponent<Movement>().enabled;
-        bool controllerCurrent = childMove1.GetComponent<IsController>().enabled;
+        bool moveCurrent = newChildMove1.GetComponent<Movement>().enabled;
+        bool controllerCurrent = newChildMove1.GetComponent<IsController>().enabled;
 
-        childMove1.GetComponent<Movement>().enabled = !moveCurrent;
-        childMove2.GetComponent<Movement>().enabled = moveCurrent;
+        newChildMove1.GetComponent<Movement>().enabled = !moveCurrent;
+        newChildMove2.GetComponent<Movement>().enabled = moveCurrent;
 
-        childMove1.GetComponent<IsController>().enabled = !controllerCurrent;
-        childMove2.GetComponent<IsController>().enabled = controllerCurrent;
-
-        Debug.Log("da chuyen doi code");
-    }
-
-    /*public void TogglerScripts()
-    {
-        bool moveCurrent = childMove1.GetComponent<Movement>().enabled;
-        bool controllerCurrent = childMove1.GetComponent<IsController>().enabled;
-
-        childMove1.GetComponent<Movement>().enabled = !moveCurrent;
-        childMove2.GetComponent<Movement>().enabled = moveCurrent;
-
-        childMove1.GetComponent<IsController>().enabled = !controllerCurrent;
-        childMove2.GetComponent<IsController>().enabled = controllerCurrent;
+        newChildMove1.GetComponent<IsController>().enabled = !controllerCurrent;
+        //newChildMove2.GetComponent<IsController>().enabled = controllerCurrent;
 
         Debug.Log("da chuyen doi code");
-    }*/
-    
+    }    
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "KickTrap")
         {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
@@ -75,20 +63,23 @@ public class ChildMovement : MonoBehaviour
             }
 
 
-            childMove1.SetActive(true);
-            childMove2.SetActive(true);
+            newChildMove1 = Instantiate(childMove1, savedPositionA, Quaternion.identity);
+            newChildMove2 = Instantiate(childMove2, savedPositionB, Quaternion.identity);
 
-            childMove1.GetComponent<Movement>().enabled = true;
-            childMove1.GetComponent<IsController>().enabled = true;
+            newBoxChild = Instantiate(boxChild, transform.position, Quaternion.identity);
+            newBoxChild.SetActive(true);
 
-            childMove2.GetComponent<Movement>().enabled = false;
-            childMove2.GetComponent<IsController>().enabled = false;
+            newChildMove1.GetComponent<Movement>().enabled = true;
+            newChildMove1.GetComponent<IsController>().enabled = true;
+
+            newChildMove2.GetComponent<Movement>().enabled = false;
+            //newChildMove2.GetComponent<IsController>().enabled = false;
 
 
         }   
     }
 
-    public void SaveBlockPositions()
+    /*public void SaveBlockPositions()
     {
         // Tìm tất cả các đối tượng có tag Cube1x1
         GameObject[] cubes = GameObject.FindGameObjectsWithTag("CtoP");
@@ -120,5 +111,5 @@ public class ChildMovement : MonoBehaviour
         {
             Debug.Log("Không tìm thấy đủ các đối tượng Cube1x1 trong scene.");
         }
-    }
+    }*/
 }

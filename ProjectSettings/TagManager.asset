@@ -10,6 +10,8 @@ TagManager:
   - CtoP
   - CtoP2
   - OutSide
+  - BoxChild
+  - KickTrap
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,16 @@ public class IsController : MonoBehaviour
     private bool isKeyPressed = false;
     private Coroutine activationCoroutine;
 
+    void Start()
+    {
+        // Tìm đối tượng trong Scene theo tag
+        targetObject = GameObject.FindWithTag("BoxChild");
+
+        if (targetObject == null)
+        {
+            Debug.LogError("Không tìm thấy đối tượng với tag 'BoxChild' trong Scene!");
+        }
+    }
     void Update()
     {
         TestPressed();
