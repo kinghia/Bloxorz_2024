@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-    [SerializeField] Vector3 targetOutside;
-    float targetSpeed = 5f;
     float loadSceneLevel = 1f;
     public float moveDistance = 1f;
     private bool hasTriggered = false;
