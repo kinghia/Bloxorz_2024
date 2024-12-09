@@ -46,7 +46,7 @@ public class ChildMovement : MonoBehaviour
         newChildMove2.GetComponent<Movement>().enabled = moveCurrent;
 
         newChildMove1.GetComponent<IsController>().enabled = !controllerCurrent;
-        //newChildMove2.GetComponent<IsController>().enabled = controllerCurrent;
+        newChildMove2.GetComponent<IsController>().enabled = controllerCurrent;
 
         Debug.Log("da chuyen doi code");
     }    
@@ -73,7 +73,7 @@ public class ChildMovement : MonoBehaviour
             newChildMove1.GetComponent<IsController>().enabled = true;
 
             newChildMove2.GetComponent<Movement>().enabled = false;
-            //newChildMove2.GetComponent<IsController>().enabled = false;
+            newChildMove2.GetComponent<IsController>().enabled = false;
 
 
         }   
