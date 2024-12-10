@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1396500960815705913}
   - component: {fileID: 6362566436188619311}
   m_Layer: 0
-  m_Name: HideTrap
+  m_Name: TrapHide
   m_TagString: HideTrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

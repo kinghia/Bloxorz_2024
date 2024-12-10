@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3784443507454477352}
   - component: {fileID: 716463516040923152}
   m_Layer: 0
-  m_Name: KickChild
+  m_Name: TrapChild
   m_TagString: ChildMove
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

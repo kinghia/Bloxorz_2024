@@ -12,6 +12,7 @@ TagManager:
   - OutSide
   - BoxChild
   - KickTrap
+  - Teleport
   layers:
   - Default
   - TransparentFX

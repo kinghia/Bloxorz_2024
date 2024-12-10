@@ -45,6 +45,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Nghia's Map/Map 8.unity
     guid: 321031f6d6f705f459332a8bbac363dc
   - enabled: 1
+    path: Assets/Scenes/Nghia's Map/Map 9.unity
+    guid: 63c01ce01928cd046ba30f08d5ccab4e
+  - enabled: 1
+    path: Assets/Scenes/Nghia's Map/Map 10.unity
+    guid: 754d2f84ba342c547b4032ab6277a23f
+  - enabled: 1
+    path: Assets/Scenes/Nghia's Map/Map 11.unity
+    guid: d7b62c05e8e678147a7b12ebd4912283
+  - enabled: 1
     path: Assets/Scenes/Nam's Map/Level 1.unity
     guid: 2a1a45c66438b9a4d9a24e5ec43b89f7
   - enabled: 1

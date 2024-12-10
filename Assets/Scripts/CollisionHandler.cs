@@ -24,6 +24,7 @@ public class CollisionHandler : MonoBehaviour
             case "FallPlatfom":
                 ActiveRigid();
                 FallPlat(other);
+                DelayReloadLevel();
                 break;
 
             case "HideTrap":
@@ -37,6 +38,7 @@ public class CollisionHandler : MonoBehaviour
             case "OutSide":
                 ActiveRigid();
                 FallPlat(other);
+                DelayReloadLevel();
                 break;
         }
     }
@@ -61,6 +63,10 @@ public class CollisionHandler : MonoBehaviour
     {
         Invoke("LoadNextScene", loadSceneLevel);
     }
+    public void DelayReloadLevel()
+    {
+        Invoke("ReloadLevel", loadSceneLevel);
+    }
 
     void LoadNextScene()
     {
@@ -72,6 +78,11 @@ public class CollisionHandler : MonoBehaviour
         }
 
         SceneManager.LoadScene(nextScene);
+    }
+    void ReloadLevel()
+    {
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentIndex);
     }
 
     private void Teleport(Collider other)
