@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 1291683370806759980}
   - component: {fileID: 8956914629246892042}
   m_Layer: 0
-  m_Name: TrapTeleport
+  m_Name: TeleportTrap
   m_TagString: Teleport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 373236cfcde2c4b47861cce088527e43, type: 2}
+  - {fileID: 2100000, guid: 5dcdee5e21f91d6459f1d49d0cbcbf3c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
